@@ -1,0 +1,13 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-zeggnu32u4e3jrgp.us.auth0.com/
+          audiences: https://open-weather-app.com
+  application:
+    name: Deben Coding Challenge
+
+app:
+  openWeatherMapBaseUrl: https://api.openweathermap.org/
+  appId: 5b652be827fd22fd331279372432f7e0

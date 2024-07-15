@@ -7,11 +7,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value="WeatherClient",url="https://api.openweathermap.org/")
+@FeignClient(value="WeatherClient",url="${app.openWeatherMapBaseUrl}")
 public interface WeatherClient {
 
   @GetMapping("/data/2.5/weather")
-  WeatherData getWeatherData(@RequestParam("lat") Double lat,@RequestParam("lon") Double lon,@RequestParam("units") String units,@RequestParam("appId") String appId);
+  WeatherData getWeatherData(@RequestParam("lat") Double lat,@RequestParam("lon") Double lon,@RequestParam("units") String units);
   @GetMapping("/geo/1.0/direct")
-  List<City> getCities(@RequestParam("q") String city,@RequestParam("appId") String appId);
+  List<City> getCities(@RequestParam("q") String city);
 }
